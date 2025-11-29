@@ -1,0 +1,38 @@
+﻿<Window x:Class="Achikobuddy.Core.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Achikobuddy" Height="300" Width="600"
+        Loaded="Main_Loaded">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Status & Info Text -->
+        <TextBlock x:Name="statusText" Grid.Row="0" Margin="0 2" FontWeight="Bold" Text="Bot Status: Initializing..."/>
+        <TextBlock x:Name="playerNameText" Grid.Row="1" Margin="0 2" Text="Player: Not found"/>
+        <TextBlock x:Name="playerPosText" Grid.Row="2" Margin="0 2" Text="Position: Unknown"/>
+        <TextBlock x:Name="playerHealthText" Grid.Row="3" Margin="0 2" Text="Health: Unknown"/>
+        <TextBlock x:Name="spellIdText" Grid.Row="4" Margin="0 2" Text="Spell ID: Unknown"/>
+        <TextBlock x:Name="targetNameText" Grid.Row="5" Margin="0 2" Text="Target: None"/>
+        <TextBlock x:Name="targetGuidText" Grid.Row="6" Margin="0 2" Text="Target GUID: None"/>
+        <TextBlock x:Name="zoneTextLabel" Grid.Row="7" Margin="0 2" Text="Zone: Unknown"/>
+        <TextBlock x:Name="minimapZoneTextLabel" Grid.Row="8" Margin="0 2" Text="Minimap Zone: Unknown"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 10 0 0">
+            <Button x:Name="StartButton" Content="Start" Click="StartButton_Click" Margin="5" Padding="10,4"/>
+            <Button x:Name="StopButton" Content="Stop" Click="StopButton_Click" Margin="5" Padding="10,4"/>
+            <Button x:Name="ClickToMoveButton" Content="Move" Click="ClickToMoveButton_Click" Margin="5" Padding="10,4"/>
+        </StackPanel>
+    </Grid>
+</Window>

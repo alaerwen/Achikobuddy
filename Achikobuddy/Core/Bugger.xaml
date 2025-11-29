@@ -1,0 +1,13 @@
+﻿<Window x:Class="Achikobuddy.Core.Bugger"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Achikobuddy.Bugger" Height="400" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="logTextBox" Grid.Row="0" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+        <Button x:Name="ClearLogsButton" Grid.Row="1" Content="Clear Logs" Width="100" Height="30" Margin="0,10,0,0" Click="ClearLogsButton_Click"/>
+    </Grid>
+</Window>
