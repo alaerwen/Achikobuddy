@@ -32,6 +32,9 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>7.3</LangVersion>
+  </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
@@ -78,7 +81,7 @@
     <Page Include="UI\DarkTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Core\Bugger.xaml">
+    <Page Include="Core\DebugWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -90,12 +93,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Memory\Memory.cs" />
+    <Compile Include="Debug\Bugger.cs" />
+    <Compile Include="Memory\Elements.cs" />
     <Compile Include="Core\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Core\Bugger.xaml.cs">
-      <DependentUpon>Bugger.xaml</DependentUpon>
+    <Compile Include="Core\DebugWindow.xaml.cs">
+      <DependentUpon>DebugWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Core\Launcher.xaml.cs">
       <DependentUpon>Launcher.xaml</DependentUpon>
@@ -138,6 +142,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UI\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AchikoDLL\AchikoDLL.csproj">
+      <Project>{d1751524-37a9-479a-8b97-1cb07b6c7824}</Project>
+      <Name>AchikoDLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

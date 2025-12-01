@@ -1,0 +1,17 @@
+1. replace: (Achikobuddy\Core\DebugWindow.xaml.cs)
+        private void BtnPtrRead_Click(object sender, RoutedEventArgs e)
+        {
+            string addr = ptrAddressBox.Text.Trim();
+
+            // Replace with real reading logic
+            string result = $"Read 32 bytes from {addr}: <value>";
+
+            AppendPtrDump(result);
+            LoadLogsForTab("PtrDump");
+        }
+
+        with real memory reading - move it into Ptrdmp.cs
+
+2. When starting application, if press launch immediately - skips "bot attached" catch
+
+3. analyze entire grey source to see how to implement reading memory in ptrdmp.

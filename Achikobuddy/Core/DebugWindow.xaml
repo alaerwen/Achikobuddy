@@ -1,0 +1,84 @@
+﻿<Window x:Class="Achikobuddy.Core.DebugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Achikobuddy.Core.DebugWindow" Height="400" Width="600">
+
+    <Border Background="#FF2D2D30" CornerRadius="6" Padding="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="logTextBox" 
+                     Grid.Row="0" 
+                     IsReadOnly="True" 
+                     VerticalScrollBarVisibility="Auto" 
+                     HorizontalScrollBarVisibility="Auto" 
+                     AcceptsReturn="True"
+                     Background="#FF1E1E1E"
+                     Foreground="White"
+                     BorderThickness="0"/>
+
+            <StackPanel Grid.Row="1"
+                        Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="10,5.333,10.333,4.667" Width="553">
+
+                <Button x:Name="btnMain"
+                        Content="Main"
+                        Width="100" Height="30"
+                        Margin="5,0"
+                        Background="ForestGreen"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="BtnMain_Click"/>
+
+                <Button x:Name="btnRemote"
+                        Content="RemoteAchiko"
+                        Width="100" Height="30"
+                        Margin="5,0"
+                        Background="ForestGreen"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="BtnRemote_Click"/>
+
+                <Button x:Name="btnAchiko"
+                        Content="AchikoDLL"
+                        Width="100" Height="30"
+                        Margin="5,0"
+                        Background="ForestGreen"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="BtnAchiko_Click"/>
+                <Button x:Name="btnPtrDmp"
+                    Content="PtrDmp"
+                    Width="100" Height="30"
+                    Margin="5,0"
+                    Background="ForestGreen"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Click="BtnPtrDmp_Click"/>
+                <Button x:Name="ClearLogsButton"
+                        Content="Clear Logs"
+                        Width="100" Height="30"
+                        Margin="5,0"
+                        Background="IndianRed"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Click="ClearLogsButton_Click"/>
+            </StackPanel>
+            <!-- Pointer Dump Panel -->
+            <StackPanel x:Name="ptrDmpPanel"
+            Grid.Row="3"
+            Orientation="Horizontal"
+            Visibility="Collapsed"
+            HorizontalAlignment="Center"
+            Margin="5">
+                <TextBox x:Name="ptrAddressBox" Width="150" Margin="0,0,5,0" Text="0x0"/>
+                <Button Content="Read" Width="80" Click="BtnPtrRead_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
